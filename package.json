@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "dtrace-provider": "^0.4.0",
+    "restify": "^2.8.5"
+  }
+}
