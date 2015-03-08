@@ -5,6 +5,10 @@ exports.getByUserDate = function (username, statusDate) {
     return table.find({username: username, statusDate: statusDate});
 };
 
+exports.getByTeamAndDate = function (teamName, statusDate) {
+    return table.find({teamName: teamName, statusDate:statusDate});
+}
+
 exports.save = function (status) {
     return table.save(status);
 };

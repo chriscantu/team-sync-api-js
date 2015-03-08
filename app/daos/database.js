@@ -16,7 +16,7 @@ exports.Table = function Table(tableName) {
 
             obj[tableName] = result;
             obj.total = result.length;
-                        
+
             return obj;
         });
     };
@@ -26,6 +26,6 @@ exports.Table = function Table(tableName) {
     };
 
     this.delete = function (id) {
-        return table.get(id).delete().run();
+        return table.get(id).delete({returnChanges:true}).run();
     };
 };

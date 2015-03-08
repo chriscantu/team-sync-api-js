@@ -2,9 +2,13 @@ var restify = require('restify'),
     status = require('./controllers/StatusCtrl');
 
 var server = restify.createServer({
-  name: 'myapp',
-  version: '1.0.0'
+    name: 'Team Sync',
+    version: '1.0.0',
 });
+
+var url = 'localhost',
+    port = 9000;
+
 server.use(restify.gzipResponse());
 server.use(restify.queryParser());
 server.use(restify.bodyParser({
@@ -14,6 +18,7 @@ server.use(restify.bodyParser({
 server.on('uncaughtException', function (req, res, route, error) {
     /* jshint -W109 */
     console.error(error.toString());
+
     res.json(error.statusCode, {
         msg: error.message,
         stack: error.stack
@@ -30,7 +35,8 @@ server.put('/status/:username/:statusDate', status.update);
 server.post('/status/:username', status.save);
 server.del('/status/:id', status.delete);
 
+server.get('/team-status/:teamName/:statusDate', status.getByTeamAndDate)
 
-server.listen(9000, function () {
-  console.log('%s listening at %s', server.name, server.url);
+server.listen(port, function () {
+  console.log(`${server.name} listening at ${url}:${port}`);
 });
