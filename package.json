@@ -1,6 +1,29 @@
 {
   "dependencies": {
     "dtrace-provider": "^0.4.0",
+    "lodash": "^3.5.0",
     "restify": "^2.8.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/chriscantu/team-sync-api.git"
+  },
+  "keywords": [
+    "nodejs",
+    "restify"
+  ],
+  "author": "Chris Cantu <chris.cantu@rackspace.com>",
+  "bugs": {
+    "url": "https://github.com/chriscantu/team-sync-api/issues"
+  },
+  "homepage": "https://github.com/chriscantu/team-sync-api",
+  "devDependencies": {
+    "chai": "^2.1.2",
+    "mocha": "^2.2.1",
+    "supervisor": "^0.6.0"
+  },
+  "scripts": {
+    "test": "mocha -R spec",
+    "dev": "supervisor app/app.js"
   }
 }
