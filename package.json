@@ -24,6 +24,6 @@
   },
   "scripts": {
     "test": "mocha -R spec",
-    "dev": "supervisor app/app.js"
+    "dev": "supervisor --debug app/app.js"
   }
 }

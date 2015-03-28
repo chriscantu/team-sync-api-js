@@ -7,7 +7,7 @@ var server = restify.createServer({
 });
 
 var url = 'localhost',
-    port = 9000;
+    port = 3000;
 
 server.use(restify.gzipResponse());
 server.use(restify.queryParser());
@@ -28,6 +28,10 @@ server.on('uncaughtException', function (req, res, route, error) {
 server.get('/echo/:name', function (req, res, next) {
   res.send(req.params);
   return next();
+});
+
+server.get('/', function (req, res){
+    res.send({'hello':'world'});
 });
 
 server.get('/status/:username/:statusDate', status.getByUserDate);
