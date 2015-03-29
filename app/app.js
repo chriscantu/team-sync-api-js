@@ -35,8 +35,8 @@ server.get('/', function (req, res){
 });
 
 server.get('/status/:username/:statusDate', status.getByUserDate);
-server.put('/status/:username/:statusDate', status.update);
-server.post('/status/:username', status.save);
+server.put('/status/:id', status.update);
+server.post('/status', status.save);
 server.del('/status/:id', status.delete);
 
 server.get('/team-status/:teamName/:statusDate', status.getByTeamAndDate)

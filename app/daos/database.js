@@ -21,11 +21,28 @@ exports.Table = function Table(tableName) {
         });
     };
 
+    this.get = function (id) {
+        return table.get(id).run();
+    }
+
     this.update = function (record) {
-        return table.get(record.id).update(record).run();
+        return table.get(record.id).update(record).run().then(function (result) {
+            if (result.skipped === 1) {
+                return Promise.reject('Not Found');
+            }
+
+            return table.get(record.id).run();
+        });
     };
 
     this.delete = function (id) {
-        return table.get(id).delete({returnChanges:true}).run();
+        return table.get(id).delete({returnChanges:true}).run().then(function (result) {
+            if (result.deleted === 0) {
+                return Promise.reject('Not Found');
+            }
+
+            return Promise.resolve(result);
+
+        });
     };
 };
