@@ -49,5 +49,7 @@ exports.delete = function (req, res) {
 
     return dao.delete(id).then(function (result) {
         res.json(200, { msg: `Status record '${id}' deleted.`});
-    }).catch(handleError(res, id));
+    }).catch(function (error) {
+        handleError(res, id)
+    });
 };
