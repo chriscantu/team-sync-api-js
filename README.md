@@ -1,3 +1,5 @@
+[ ![Codeship Status for chriscantu/team-sync-api-js](https://codeship.com/projects/a803a6a0-b946-0132-4da1-525e2ea92bd0/status?branch=master)](https://codeship.com/projects/71576)
+
 # team-sync-api-js
 IOjs version of the Team Sync API for comparison
 
