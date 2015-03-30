@@ -20,6 +20,6 @@ This project is setup to run tasks via NPM. The full lists of tasks can be found
 
 Additionally, rethinkdb must be running locally on its default ports.  
 
-The following commands are supported:
+## Project Commands
 * Running the project:  `npm run dev`
 * Running the unit tests:  `npm run test`
