@@ -2,7 +2,8 @@
   "dependencies": {
     "dtrace-provider": "^0.4.0",
     "lodash": "^3.5.0",
-    "restify": "^2.8.5"
+    "restify": "^2.8.5",
+    "rethinkdbdash": "^1.16.13"
   },
   "repository": {
     "type": "git",
