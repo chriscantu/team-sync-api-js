@@ -1,5 +1,5 @@
 var restify = require('restify'),
-    status = require('./controllers/StatusCtrl');
+    status = require('./controllers/StatusCtrl').controller;
 
 var server = restify.createServer({
     name: 'Team Sync',
