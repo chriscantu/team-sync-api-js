@@ -54,6 +54,14 @@ describe('StatusCtrl', function () {
             ctrl.update(req, res);
             expect(dao.update.calledOnce).to.be.true;
         });
+
+        it(':delete', function () {
+            dao.delete = sinon.stub();
+            dao.delete.resolves({});
+
+            ctrl.delete(req, res);
+            expect(dao.delete.calledOnce).to.be.true;
+        });
     });
 
 });
