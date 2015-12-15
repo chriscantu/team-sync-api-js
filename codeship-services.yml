@@ -1,0 +1,10 @@
+app:
+  build:
+    image: app
+    dockerfile_path: Dockerfile
+  environment:
+    RETHINKDB_URL: "localhost:28015"
+  links:
+    - rethinkdb
+rethinkdb:
+  image: rethinkdb:2.2.1
