@@ -3,7 +3,7 @@ app:
     image: app
     dockerfile_path: Dockerfile
   environment:
-    RETHINKDB_URL: "localhost:28015"
+    RETHINKDB_URL: "rethinkdb:28015"
   links:
     - rethinkdb
 rethinkdb:

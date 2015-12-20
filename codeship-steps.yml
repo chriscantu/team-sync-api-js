@@ -1,2 +1,9 @@
-- service: app
+- name: install
+  service: app
+  command: npm install
+- name: test
+  service: app
+  command: npm test
+- name: run app
+  service: app
   command: node app/app.js

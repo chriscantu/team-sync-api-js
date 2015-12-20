@@ -1,4 +1,4 @@
-var db = require('rethinkdbdash')({host: 'localhost', db: 'teamsync'});
+var db = require('rethinkdbdash')({host: 'rethinkdb', db: 'teamsync'});
 
 exports.Table = function Table(tableName) {
     var table = db.table(tableName);
