@@ -8,3 +8,5 @@ app:
     - rethinkdb
 rethinkdb:
   image: rethinkdb:2.2.1
+cache:
+  image: codeship/heroku-deployment:latest
