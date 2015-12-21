@@ -3,3 +3,4 @@ rethinkdb_data
 coverage
 .DS_Store
 codeship.aes
+heroku-deployment.env
