@@ -1,3 +1,14 @@
+herokudeployment:
+  build:
+    image: codeship/heroku-deployment
+    dockerfile_path: Dockerfile
+  encrypted_env_file: heroku-deployment.env.encrypted
+  volumes:
+    - ./:/app
+  environment:
+    RETHINKDB_URL: "rethinkdb:28015"
+  links:
+    - rethinkdb
 app:
   build:
     image: app

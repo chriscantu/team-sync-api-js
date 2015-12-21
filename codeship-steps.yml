@@ -7,3 +7,12 @@
 - name: test
   service: app
   command: npm test
+- name: deploy
+  service: herokudeployment
+  command:  heroku run --exit-code --app codeship-heroku-deployment -- true
+- service: herokudeployment
+  tag: master
+  type: push
+  image_name: chriscantu/team-sync-api
+  registry: https://index.docker.io/v1/
+  encrypted_dockercfg_path: dockercfg.encrypted
