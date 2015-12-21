@@ -1,3 +1,6 @@
+- name: download-cache
+  service: cache
+  command: true
 - name: install
   service: app
   command: npm install
