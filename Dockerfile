@@ -1,4 +1,4 @@
-FROM buildpack-deps:wheezy
+FROM debian:latest
 
 RUN apt-get update && apt-get install -y \
   bash \
@@ -22,7 +22,7 @@ ENV JQ_VERSION 1.5
 RUN wget -q -O /usr/bin/jq https://github.com/stedolan/jq/releases/download/jq-$JQ_VERSION/jq-linux64
 RUN chmod 744 /usr/bin/jq
 
-#COPY scripts/ /usr/bin/
+COPY scripts/ /usr/bin/
 
 # gpg keys listed at https://github.com/nodejs/node
 RUN set -ex \
