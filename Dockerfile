@@ -1,4 +1,4 @@
-FROM debian:latest
+FROM buildpack-deps:wheezy
 
 RUN apt-get update && apt-get install -y \
   bash \
