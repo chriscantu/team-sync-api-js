@@ -1,6 +1,6 @@
 herokudeployment:
   build:
-    image: chriscantu/team-sync-api-js
+    image: codeship/heroku-deployment
     dockerfile_path: Dockerfile
   encrypted_env_file: heroku-deployment.env.encrypted
   volumes:
@@ -20,4 +20,4 @@ app:
 rethinkdb:
   image: rethinkdb:2.2.1
 cache:
-  image: chriscantu/team-sync-api-js:latest
+  image: codeship/heroku-deployment:latest
