@@ -2,7 +2,7 @@ var sleep = require('sleep');
 sleep.sleep(5);
 
 var restify = require('restify'),
-    status = require('./controllers/StatusCtrl').controller;
+    status = require('./app/controllers/StatusCtrl').controller;
 
 var server = restify.createServer({
     name: 'Team Sync',
