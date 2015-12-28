@@ -11,6 +11,7 @@ IOjs version of the Team Sync API for comparison
 * `cd team-sync-node`
 * `otto compile`
 * `otto dev`
+* `otto dev ssh` (logs into local vm)
 * `npm install`
 
 ## Running the project
