@@ -10,7 +10,7 @@ var server = restify.createServer({
 });
 
 var url = 'localhost',
-    port = 3000;
+    port = 8080;
 
 server.use(restify.gzipResponse());
 server.use(restify.queryParser());
