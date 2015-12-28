@@ -2,7 +2,7 @@ var sleep = require('sleep');
 sleep.sleep(5);
 
 var restify = require('restify'),
-    status = require('./controllers/StatusCtrl').controller;
+    status = require('./app/controllers/StatusCtrl').controller;
 
 var server = restify.createServer({
     name: 'Team Sync',
@@ -10,7 +10,7 @@ var server = restify.createServer({
 });
 
 var url = 'localhost',
-    port = 3000;
+    port = 8080;
 
 server.use(restify.gzipResponse());
 server.use(restify.queryParser());
