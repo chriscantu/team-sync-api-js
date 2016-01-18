@@ -1,17 +1,29 @@
-var db = require('rethinkdbdash')({host: 'rethinkdb.service.consul', db: 'teamsync'});
+var db = require('rethinkdb');
+var connect;
+
+db.connect({host: 'rethinkdb.service.consul', timeout: 1},
+  (err, connection) => {
+    connect = connection;
+  });
+db.dbCreate('teamSync');
+db.connect({db: 'teamSync'}, (err, connection) => {
+  connect = connection;
+});
 
 exports.Table = function Table(tableName) {
+    db.tableCreate(tableName);
     var table = db.table(tableName);
 
     this.save = function (record) {
-        return table.insert(record).run().then(function (result) {
+        return table.insert(record).run(connect).then(function (result) {
             var key = result['generated_keys'][0];
             return table.get(key).run();
         });
     };
 
     this.find = function (queryObj) {
-        return table.filter(queryObj).run().then(function (result) {
+        return table.filter(queryObj).run(connect).then(function (result) {
+            console.log('Query');
             var obj = {};
 
             obj[tableName] = result;

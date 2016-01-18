@@ -3,6 +3,7 @@
     "dtrace-provider": "^0.4.0",
     "lodash": "^3.5.0",
     "restify": "~3.0.0",
+    "rethinkdb": "^2.2.1",
     "rethinkdbdash": "^1.16.13",
     "sleep": "^3.0.0"
   },

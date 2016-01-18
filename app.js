@@ -1,6 +1,3 @@
-var sleep = require('sleep');
-sleep.sleep(5);
-
 var restify = require('restify'),
     status = require('./app/controllers/StatusCtrl').controller;
 
@@ -10,7 +7,7 @@ var server = restify.createServer({
 });
 
 var url = 'localhost',
-    port = 8080;
+    port = 8081;
 
 server.use(restify.gzipResponse());
 server.use(restify.queryParser());
@@ -19,9 +16,7 @@ server.use(restify.bodyParser({
 }));
 
 server.on('uncaughtException', function (req, res, route, error) {
-    /* jshint -W109 */
-    console.error(error.toString());
-
+  console.log("Error", error);
     res.json(error.statusCode, {
         msg: error.message,
         stack: error.stack
@@ -38,6 +33,7 @@ server.get('/', function (req, res){
 });
 
 server.get('/status/:username/:statusDate', status.getByUserDate);
+server.get('/status/:username', status.getByUser);
 server.put('/status/:id', status.update);
 server.post('/status', status.save);
 server.del('/status/:id', status.delete);
