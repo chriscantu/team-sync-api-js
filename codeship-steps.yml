@@ -16,5 +16,5 @@
   tag: master
   type: push
   image_name: chriscantu/team-sync-api-js
-  registry: https://index.docker.io/v1/
+  registry: https://hub.docker.com/
   encrypted_dockercfg_path: dockercfg.encrypted
