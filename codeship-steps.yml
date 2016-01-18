@@ -9,7 +9,7 @@
   command: npm test
 - name: deploy
   service: herokudeployment
-  command: codeship_heroku deploy team-sync
+  command: codeship_heroku deploy /app team-sync
 - service: herokudeployment
   command: heroku run --exit-code --app team-sync -- true
 - service: herokudeployment
